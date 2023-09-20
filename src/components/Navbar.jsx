@@ -48,37 +48,37 @@ const Navbar = () => {
             <h2 className='text-2xl p-4'>Easy <span className='font-bold'>Eats</span></h2>
             <nav>
                 <ul className='flex flex-col p-4 text-gray-600'>
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex cursor-pointer hover:bg-gray-200 duration-500'>
                         <TbTruckDelivery size={20} className='mr-4' />
                         Orders
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <MdFavorite size={20} className='mr-4' />
                         Favorites
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <FaWallet size={20} className='mr-4' />
                         Wallet
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <MdHelp size={20} className='mr-4' />
                         Help
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <AiFillTag size={20} className='mr-4' />
                         Promotion
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <BsFillSaveFill size={20} className='mr-4' />
                         Best Ones
                     </li>
 
-                    <li className='text-xl py-4 flex'>
+                    <li className='text-xl py-4 flex hover:bg-gray-200 duration-500 cursor-pointer'>
                         <FaUserFriends size={20} className='mr-4' />
                         Invite Friends
                     </li>
