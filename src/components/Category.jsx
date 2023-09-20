@@ -11,9 +11,9 @@ const Category = () => {
             categories.map((item, index) => {
                 return (
                     <div key={index} className='bg-gray-100 rounded-lg p-4 flex justify-between items-center hover:scale-95 duration-500 cursor-pointer'>
-                        <h2 className='font-bold sm:text-xl'>{item.name}</h2>
+                        <h2 className='font-bold text-sm sm:text-xl'>{item.name}</h2>
                         <img src={item.image} alt={item.name} 
-                        className='w-20'
+                        className='w-10 sm:w-20'
                         />
                     </div>
                 )

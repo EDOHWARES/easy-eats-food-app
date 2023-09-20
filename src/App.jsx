@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -8,14 +9,15 @@ import Category from './components/Category'
 
 function App() {
 
+
   return (
-    <>
+    <div>
      <Navbar /> 
      <Hero />
      <HeadlineCards />
      <Food />
      <Category />
-    </>
+    </div>
   )
 }
 

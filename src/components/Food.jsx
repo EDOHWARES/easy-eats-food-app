@@ -25,13 +25,13 @@ const Food = () => {
 
   return (
     <div className='max-w-[1640px] m-auto px-4 py-12'>
-      <h1 className='text-orange-600 font-bold text-4xl text-center'>Top Rated Menu Items</h1>
+      <h1 className='text-orange-600 font-bold text-2xl mb-2 md:text-4xl text-center'>Top Rated Menu Items</h1>
       {/* Filter Row */}
-      <div className='flex flex-col gap-4 lg:flex-row justify-between '>
+      <div className='flex flex-col gap-4 lg:flex-row justify-between mb-4 mt-2'>
         {/* Filter Type */}
         <div>
             <p className='font-bold text-gray-700'>Filter Type</p>
-            <div className='flex justify-between max-w-[530px] flex-wrap'>
+            <div className='flex max-w-[530px] flex-wrap'>
                 <button onClick={() => setFoods(data)} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1 '>All</button>
                 <button onClick={() => filterType("burger")} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1 '>Burgers</button>
                 <button onClick={() => filterType("pizza")} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1 '>Pizza</button>
@@ -42,7 +42,7 @@ const Food = () => {
         {/* Filter Price */}
         <div>
             <p className='font-bold text-gray-700'>Filter Price</p>
-            <div className='flex justify-between flex-wrap max-w-[500px]'>
+            <div className='flex flex-wrap max-w-[500px]'>
                 <button onClick={() => filterPrice("15000")} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1'>₦15000</button>
                 <button onClick={() => filterPrice("20000")} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1'>₦20000</button>
                 <button onClick={() => filterPrice("25000")} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white duration-500 m-1'>₦25000</button>
@@ -59,10 +59,10 @@ const Food = () => {
                 <img src={item.image} alt={item.name} 
                 className='w-full h-[200px] object-cover rounded-t-lg'
                 />
-                <div className='flex justify-between px-2 py-4'>
-                    <p className='font-bold'>{item.name}</p>
+                <div className='flex sm:justify-between items-center px-2 py-4 flex-col sm:flex-row space-y-4 sm:space-y-0'>
+                    <p className='font-bold text-sm text-center'>{item.name}</p>
                     <p>
-                        <span className='bg-orange-500 text-white p-1 rounded-full flex items-center justify-center cursor-pointer'>₦{item.price}</span>
+                        <span className='bg-orange-500 text-white px-2 py-1 rounded-full flex items-center justify-center cursor-pointer'>₦{item.price}</span>
                     </p>
                 </div>
             </div>

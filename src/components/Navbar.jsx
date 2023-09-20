@@ -7,34 +7,40 @@ import {FaUserFriends, FaWallet} from "react-icons/fa";
 import {MdFavorite, MdHelp} from "react-icons/md";
 
 const Navbar = () => {
+
+    const [switchT, setSwitchT] = React.useState(false)
+
     const [nav, setNav] = useState(false)
   return (
     <div className='max-w-[1640px] mx-auto flex justify-between items-center p-4'>
         
         {/* Left section */}
         <div className='flex items-center'>
-            <div onClick={() => setNav(!nav)} className='cursor-pointer'>
-                <AiOutlineMenu size={30} />
+            <div className='flex items-center space-x-2'>
+                <div onClick={() => setNav(!nav)} className='cursor-pointer'>
+                    <AiOutlineMenu size={30} />
+                </div>
+                <h1 className='text-xl sm:text-3xl lg:text-4xl px-2'>
+                    Easy <span className='font-bold'>Eats</span>
+                </h1>
             </div>
-            <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>
-                Easy <span className='font-bold'>Eats</span>
-            </h1>
-            <div className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
-                <p className='bg-black text-white rounded-full p-2 cursor-pointer'>Delivery</p>
-                <p className='p-2 cursor-pointer'>Pickup</p>
+            <div onClick={() => setSwitchT(!switchT)} className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
+                <p className={`${switchT ? "" : "bg-black text-white"} rounded-full p-2 cursor-pointer`}>Delivery</p>
+                <p className={`p-2 cursor-pointer rounded-full ${switchT ? "bg-black text-white" : ""}`}>Pickup</p>
             </div>
         </div>
 
         {/* Search section */}
-        <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
+        <div className='bg-gray-200 hidden rounded-full sm:flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
             <AiOutlineSearch size={25} />
             <input type="text" placeholder='Search foods' 
             className='bg-transparent p-2 focus:outline-none'
             />
         </div>
+        
 
         {/* Cart button */}
-        <button className='bg-black rounded-full text-white hidden md:flex items-center py-2'>
+        <button className='bg-black rounded-full text-white flex md:flex items-center py-2 hover:scale-95 duration-500'>
             < BsFillCartFill size={20} className='mr-2' />
             Cart
         </button>
@@ -43,7 +49,7 @@ const Navbar = () => {
         {/* Overlay */}
         {nav && <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div>}
         {/* Sidebar */}
-        <div className={`${nav ? "fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300" : "fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300"}`}>
+        <div className={`${nav ? "fixed top-0 left-0 w-[60vw] sm:w-[300px] h-screen bg-white z-10 duration-300" : "fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300"}`}>
             <AiOutlineClose onClick={() => setNav(!nav)} size={30} className='absolute right-4 top-4 cursor-pointer hover:bg-gray-300 rounded-full p-2 duration-500' />
             <h2 className='text-2xl p-4'>Easy <span className='font-bold'>Eats</span></h2>
             <nav>
